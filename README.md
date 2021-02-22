@@ -1,3 +1,9 @@
+Projeto desenvolvido para teste front-end.
+Apesar do bom conhecimento em BootStrap o css foi todo desenvolvido manualmente para demonstrar também o conhecimento sem o framework.
+O layout é responsivo.
+A integração do cadastro e login foi mockada utilizando o local storage do navegador.
+Obrigado.
+
 # PraxioTeste
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
