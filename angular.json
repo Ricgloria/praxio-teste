@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "praxio-teste"
+  "defaultProject": "praxio-teste",
+  "cli": {
+    "analytics": false
+  }
 }

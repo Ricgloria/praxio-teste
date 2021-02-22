@@ -1,0 +1,59 @@
+<div class="container">
+  <img src="../../../assets/img/png/front-test-logo.png" class="logo" width="64" height="64" alt="logo">
+  <form [formGroup]="registerForm" class="register-form-container">
+    <h1>Cadastrar</h1>
+    <div class="input-area">
+      <div>
+        <h2>Informações Pessoais</h2>
+        <div class="form-group">
+          <input formControlName="name" placeholder="Nome/Razão Social" id="name" type="text">
+        </div>
+        <div class="half-divisor">
+          <div class="form-group">
+            <input formControlName="cpf" [mask]="mask.cpf" placeholder="CPF" id="cpf" type="text">
+          </div>
+          <div class="form-group">
+            <input formControlName="phone" [mask]="getPhoneMask()" placeholder="Telefone" id="phone" type="text">
+          </div>
+        </div>
+        <div class="form-group">
+          <input formControlName="email" placeholder="E-mail" id="email" type="text">
+        </div>
+        <div class="form-group">
+          <input formControlName="password" #inputElement placeholder="Senha" type="password">
+          <img
+            (click)="inputElement.type === 'password' ? inputElement.type = 'text' : inputElement.type = 'password'"
+            class="password"
+            [src]="inputElement.type === 'password' ? '../../../assets/img/svg/password-eye-opened.svg' : '../../../assets/img/svg/password-eye-closed.svg'"
+            alt="senha">
+        </div>
+      </div>
+      <div formGroupName="address">
+        <h2>Endereço</h2>
+        <div class="address-divisor">
+          <div class="form-group">
+            <input
+              #zipcodeInput (input)="checkZipAndRequest(zipcodeInput.value)" formControlName="zipcode"
+              [mask]="mask.zipcode" placeholder="CEP" id="cep" type="text">
+          </div>
+          <div class="form-group">
+            <input formControlName="street" placeholder="Logradouro" id="street" type="text">
+          </div>
+        </div>
+        <div class="address-divisor">
+          <div class="form-group">
+            <input formControlName="number" placeholder="Número" id="number" type="text">
+          </div>
+          <div class="form-group">
+            <input formControlName="neighborhood" placeholder="Bairro" id="neighborhood" type="text">
+          </div>
+        </div>
+      </div>
+    </div>
+    <span class="success" [class.show]="show">
+      Seu cadastro foi efetuado com sucesso, você será redirecionado para o login!
+    </span>
+    <button (click)="onRegisterClick()" [disabled]="registerForm.invalid" class="auth-button btn-ripple">Cadastrar</button>
+    <a class="login" routerLink="/login">Já tem uma conta? Faça login</a>
+  </form>
+</div>

@@ -1,0 +1,23 @@
+<div class="container">
+  <img src="../../../assets/img/png/front-test-logo.png" class="logo" width="64" height="64" alt="logo">
+  <form [formGroup]="loginForm" class="form-container">
+    <h1>Entrar</h1>
+    <div class="form-group">
+      <input formControlName="email" id="email" placeholder="E-mail" type="text">
+    </div>
+    <div class="form-group">
+      <input formControlName="password" #inputElement placeholder="Senha" type="password">
+      <img
+        (click)="inputElement.type === 'password' ? inputElement.type = 'text' : inputElement.type = 'password'"
+        class="password"
+        [src]="inputElement.type === 'password' ? '../../../assets/img/svg/password-eye-opened.svg' : '../../../assets/img/svg/password-eye-closed.svg'"
+        alt="senha">
+    </div>
+    <span class="alert" [class.show]="alert">
+      verifique login e senha!
+    </span>
+    <a routerLink="/recuperar-senha" class="recover">ESQUECEU A SENHA?</a>
+    <button (click)="onLoginClick()" [disabled]="loginForm.invalid" class="auth-button btn-ripple">Entrar</button>
+    <a routerLink="/cadastro" class="register">Não tem uma conta? Cadastre-se</a>
+  </form>
+</div>

@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
+@import "assets/custom-styles/forms";
+
+:host {
+  font-family: 'Mukta', sans-serif;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100vh;
+  height: auto;
+  max-width: 100vw;
+  font-family: 'Mukta', sans-serif;
+  color: #585859;
+  background: #FFFFFF;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: url("./assets/img/png/bg-front-top.png") no-repeat top;
+  background-position-y: 104%;
+}
+
+.logo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}

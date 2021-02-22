@@ -1,0 +1,84 @@
+input, select {
+  &.ng-invalid.ng-touched {
+    -webkit-box-shadow: 0 0 4px 1px rgba(255, 0, 0, .3);
+    -moz-box-shadow: 0 0 4px 1px rgba(255, 0, 0, .3);
+    box-shadow: 0 0 4px 1px rgba(255, 0, 0, .3);
+  }
+}
+
+.auth-button {
+  background: #7626FF;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: bold;
+  height: 60px;
+  box-shadow: 0 10px 39px #867FF67A;
+  border-radius: 36px;
+  border: none;
+  cursor: pointer;
+}
+
+.auth-button:disabled {
+  opacity: .5;
+  cursor: default;
+}
+
+button:focus {
+  outline: none;
+}
+
+.btn-ripple {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  transition: all linear .5s;
+}
+
+.btn-ripple::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 25%;
+  height: 100%;
+  width: 50%;
+  background-color: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: all linear .5s;
+  transform: scale(5, 5);
+}
+
+.btn-ripple:active::after {
+  padding: 0;
+  margin: 0;
+  opacity: .2;
+  transition: 0s;
+  transform: scale(0, 0);
+}
+
+.form-group {
+  margin-bottom: 10px;
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+    border: 1px solid #C2C2C2;
+    border-radius: 6px;
+    height: 42px;
+    color: #585859;
+    font-size: 14px;
+    padding-left: 26px;
+  }
+
+  input:focus {
+    outline: none;
+    border: 2px solid #C2C2C2;
+  }
+
+  input::placeholder {
+    color: #CAD0DC;
+    font-size: 14px;
+  }
+}
