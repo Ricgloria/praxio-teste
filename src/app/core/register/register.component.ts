@@ -57,10 +57,8 @@ export class RegisterComponent implements OnInit {
 
   checkZipAndRequest(event: string): void {
     if (this.registerForm?.get('address')?.get('zipcode')?.valid) {
-
-      this.addressService.getAddressByCep(event).pipe(take(1)).subscribe(
+      this.addressService.getAddressByZipcode(event).pipe(take(1)).subscribe(
         response => {
-
           if (response.erro) {
             this.setZipcodeError();
           } else {

@@ -205,9 +205,11 @@ footer {
 
 @media screen and (max-width: 1050px){
   footer {
-    justify-content: center;
+    justify-content: flex-end;
   }
   .links {
+    margin-left: 0;
+    margin-right: 10%;
     a {
       color: #FFFFFF;
     }
@@ -224,7 +226,7 @@ footer {
   }
 }
 
-@media screen and (max-width: 660px){
+@media screen and (max-width: 700px){
   .front-img {
     width: 300px;
   }
@@ -232,9 +234,22 @@ footer {
   .big-img {
     top: -32%;
   }
+
+  footer {
+    background-size: auto;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height: 350px;
+  }
+  .links {
+    margin-bottom: 5%;
+  }
 }
 
 @media screen and (max-width: 500px){
+  .nav-header {
+    background: #FFFFFF;
+  }
   .front-img {
     width: 180px;
   }

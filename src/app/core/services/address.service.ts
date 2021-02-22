@@ -17,7 +17,7 @@ export class AddressService {
     private httpClient: HttpClient
   ) { }
 
-  getAddressByCep(cep: string): Observable<ViaCepAddress> {
-    return this.httpClient.get<ViaCepAddress>(`${this.url}/${cep}/json`);
+  getAddressByZipcode(zipcode: string): Observable<ViaCepAddress> {
+    return this.httpClient.get<ViaCepAddress>(`${this.url}/${zipcode}/json`);
   }
 }
